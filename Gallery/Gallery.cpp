@@ -4,6 +4,7 @@
 #include "stdafx.h"
 #include "CMemoryAccess.h"
 #include <iostream>
+#include <ctime>
 #include <string>
 #include "CAlbumManager.h"
 #include "CDataAccessTester.h"
@@ -24,10 +25,13 @@ int main(int argc, char **argv)
 	// initialize album manager
 	CAlbumManager albumMannager(dataAccess);
 
+	//Time manager
+	const time_t ctt = time(0);
+
 	// logic goes here
 	bool keepRunning = true;
 	string command;
-	cout << "Welcome to Gallery!\n";
+	cout << "Welcome to Iddo Botzer's Gallery!\n" << asctime(localtime(&ctt)) << endl;
 	do
 	{
 		cout << "Please enter 'exit' to quit, 'help' for help screen or any other command: ";
