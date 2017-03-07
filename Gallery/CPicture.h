@@ -1,5 +1,7 @@
 ﻿#pragma once
 #include <set>
+#include <iostream>
+#include <string>
 #include <list>
 
 using namespace std;

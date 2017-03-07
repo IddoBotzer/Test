@@ -32,7 +32,7 @@ int main(int argc, char **argv)
 	printInfo();
 	do
 	{
-		cout << "Please enter 'exit' to quit, 'help' for help screen or any other command: ";
+		cout << "\nPlease enter 'exit' to quit, 'help' for help screen or any other command: ";
 		getline(cin, command);
 		if (command.compare("exit") == 0) {
 			keepRunning = false;

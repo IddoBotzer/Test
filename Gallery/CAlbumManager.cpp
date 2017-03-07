@@ -415,8 +415,20 @@ void CAlbumManager::untagUserInPicture()
 		return;
 	}
 
-	_dataAccess.untagUserInPicture(*pic, userId);
-	cout << "User [" << userIdStr << "] successfulkly untagged in picture [" << pic->getName() << "] in album [" << _openAlbum->getName() << "]\n";
+	//Getting all user tags on open picture
+	set<int> currentUserTags = this->_openAlbum->getPicture(picId)->getUserTags();
+
+	//Searching for the specific user tag
+	if (currentUserTags.find(userId) == currentUserTags.end())
+	{
+		cout << "Error: user is not tagged in picture\n";
+	}
+	else
+	{
+		_dataAccess.untagUserInPicture(*pic, userId);
+		cout << "User [" << userIdStr << "] successfulkly untagged in picture [" << pic->getName() << "] in album [" << _openAlbum->getName() << "]\n";
+	}
+	
 }
 
 void CAlbumManager::listUserTags()
