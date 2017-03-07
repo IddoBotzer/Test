@@ -4,7 +4,7 @@
 
 CAlbum::CAlbum() : _id(0)
 {
-	
+	this->setCreationDateNow();
 }
 
 string CAlbum::getName() const

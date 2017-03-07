@@ -201,7 +201,7 @@ void CAlbumManager::listAlbums()
 	const albums& albums = _dataAccess.getAlbums();
 	cout << "Albums list:\n";
 	for (albums_const_iter iter = albums.begin(); iter != albums.end(); ++iter) {
-		cout << "   + Album [" << iter->getId() << "] " << "- " << 
+		cout << iter->getCreationDate() << " - Album [" << iter->getId() << "] " << "- " << 
 			    iter->getName() << " @" << iter->getUserId() << "\n";
 	}
 	cout << "\n";
