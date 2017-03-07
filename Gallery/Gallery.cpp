@@ -11,6 +11,7 @@
 
 using namespace std;
 
+void printInfo(); 
 
 int main(int argc, char **argv)
 {
@@ -25,13 +26,10 @@ int main(int argc, char **argv)
 	// initialize album manager
 	CAlbumManager albumMannager(dataAccess);
 
-	//Time manager
-	const time_t ctt = time(0);
-
 	// logic goes here
 	bool keepRunning = true;
 	string command;
-	cout << "Welcome to Iddo Botzer's Gallery!\n" << asctime(localtime(&ctt)) << endl;
+	printInfo();
 	do
 	{
 		cout << "Please enter 'exit' to quit, 'help' for help screen or any other command: ";
@@ -52,6 +50,14 @@ int main(int argc, char **argv)
 	return 0;
 }
 
+//Prints my name and the current time + date
+void printInfo()
+{
+	//Time manager
+	const time_t ctt = time(0);
+	cout << "Welcome to Iddo Botzer's Gallery!\n" << asctime(localtime(&ctt)) << endl;
+
+}
 
 
 
